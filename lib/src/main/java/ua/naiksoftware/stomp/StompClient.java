@@ -274,8 +274,7 @@ public class StompClient {
                 .doOnError(throwable -> unsubscribePath(destinationPath).subscribe());
     }
 
-
-    private Completable unsubscribePath(String dest) {
+    public Completable unsubscribePath(String dest) {
         streamMap.remove(dest);
 
         String topicId = topics.get(dest);
